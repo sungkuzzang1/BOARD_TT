@@ -17,4 +17,11 @@
 		WHERE USERID = #{userId}
 	</select>
 	
+	<select id="login" resultType="com.board.demo.vo.MemberVO">
+		SELECT USERID, USERPASS 
+		  FROM MP_MEMBER
+		 WHERE USERID = #{userId}
+		   AND USERPASS = #{userPass}   
+	</select>
+	
 </mapper>

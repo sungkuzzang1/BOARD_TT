@@ -19,4 +19,8 @@ public class MemberServiceImpl implements MemberService{
 		int result =dao.idChk(vo);
 		return result;
 	}
+	
+	public MemberVO login(MemberVO vo) throws Exception{
+		return dao.login(vo);
+	}
 }

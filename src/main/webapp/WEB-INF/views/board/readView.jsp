@@ -31,7 +31,33 @@
 					<a href="<%=request.getContextPath()%>/board/delete?bno=${read.bno}">삭제</a>					
 					<a href="<%=request.getContextPath()%>/board/list">목록보기</a>
 				</div>
-			</div>																																		
+			</div>
+			
+			<div class="view_reply_wrap">
+				<c:forEach items="${replyList}" var="replyList">
+					<div>
+						<p>
+							작성자 : ${replyList.writer}<br />
+        					작성 날짜 :  <fmt:formatDate value="${replyList.regdate}" pattern="yyyy-MM-dd" />
+						</p>
+						<p>${replyList.content}</p>
+					</div>
+				</c:forEach>
+			</div>
+			
+			<div class="view_reply_form">
+				<form action="<%=request.getContextPath() %>/board/replyWrite" method="post">
+					<input type="hidden" name="bno" value="${read.bno }">
+					<div class="">
+						<label for="writer">댓글 작성자</label><input type="text" id="writer" name="writer" />
+					    <br/>
+					    <label for="content">댓글 내용</label><input type="text" id="content" name="content" />
+					    <br>
+					    <input type="submit" value="작성">
+					</div>
+				</form>
+			</div>
+																																					
 		</div>				
 	</div>			
 <%@ include file="../inc/footer.jsp" %>

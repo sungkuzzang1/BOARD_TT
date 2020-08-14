@@ -19,5 +19,9 @@ public class MemberDAOImpl implements MemberDAO{
 		int result = sql.selectOne("memberMapper.idChk",vo);
 		return result;
 	}
+	
+	public MemberVO login(MemberVO vo) throws Exception{
+		return sql.selectOne("memberMapper.login",vo);
+	}
 
 }
