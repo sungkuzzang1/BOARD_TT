@@ -18,10 +18,29 @@
 	</select>
 	
 	<select id="login" resultType="com.board.demo.vo.MemberVO">
-		SELECT USERID, USERPASS 
+		SELECT USERID, USERPASS, USERNAME 
 		  FROM MP_MEMBER
 		 WHERE USERID = #{userId}
-		   AND USERPASS = #{userPass}   
+		   <!--  AND USERPASS = #{userPass}-->   
+	</select>
+	
+	<update id="memberUpdate">
+		UPDATE MP_MEMBER SET 
+		<!--USERPASS = #{userPass},-->
+		USERNAME = #{userName}
+		WHERE USERID = #{userId}
+	</update>
+	
+	<delete id="memberDelete">
+		DELETE FROM MP_MEMBER
+		WHERE USERID = #{userId}
+		 <!--  AND USERPASS = #{userPass}--> 
+	</delete>
+	
+	<select id="passChk" resultType="int">
+		SELECT COUNT(*) FROM MP_MEMBER
+		WHERE USERID = #{userId}
+		  AND USERPASS = #{userPass}
 	</select>
 	
 </mapper>

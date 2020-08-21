@@ -43,8 +43,10 @@
 				</div>
 				</c:if>
 				<c:if test="${member != null}">
-					<p>${member.userId}님 환영 합니다.</p>
+					<p>${member.userName}님 환영 합니다.</p>
 					<a href="${path }/member/logout" class="logout">로그아웃</a>
+					<div><a href="${path }/member/modify" class="logout">회원정보수정</a></div>
+					<div><a href="${path }/member/memberDeleteView" class="logout">회원탈퇴</a></div>
 				</c:if>
 				<c:if test="${msg == false}">
 					<script>

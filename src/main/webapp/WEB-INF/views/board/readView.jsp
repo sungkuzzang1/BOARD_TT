@@ -3,6 +3,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../inc/header.jsp" %>
 
+<c:if test="${member == null}">
+	<script>
+		alert("로그인을 해주세요");
+		location.replace("${path}/");			
+	</script>		
+</c:if>
+
 <style>
 .view_wrap{width:100%}
 .view_tit_wrap{text-align:center;border-bottom:2px solid #eee;padding-bottom:30px}

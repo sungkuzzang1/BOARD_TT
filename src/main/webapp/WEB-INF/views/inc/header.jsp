@@ -10,7 +10,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 <title>사이트</title>
 </head>
-<body>
+<body>	
+
 	<div id="wrap">
 		<header>
 			<div>
